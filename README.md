@@ -3,7 +3,9 @@
 
 "POM in YAML" is a simple tool to write [Maven](http://maven.apache.org) POM files using [YAML](http://www.yaml.org/).
 
-## Setup
+## Usage
+
+First you would need to install it in your system:
 
     python setup.py install
 
@@ -25,29 +27,29 @@ Currently it has a strong issue for its usage:
 
 Basically it's a translation of the current XML tree to YAML.
 
-project:
+    project:
 
-    modelVersion: 4.0.0
-    groupId: com.foo
-    artifactId: bar
-    version: 1.0-SNAPSHOT
-    packaging: jar
+        modelVersion: 4.0.0
+        groupId: com.foo
+        artifactId: bar
+        version: 1.0-SNAPSHOT
+        packaging: jar
 
-    build:
-        plugins:
-            plugin:
-                groupId: org.apache.maven.plugins
-                artifactId: maven-compiler-plugin
-                version: 2.5.1                
-                configuration:
-                    source: 1.6
-                    target: 1.6
+        build:
+            plugins:
+                plugin:
+                    groupId: org.apache.maven.plugins
+                    artifactId: maven-compiler-plugin
+                    version: 2.5.1                
+                    configuration:
+                        source: 1.6
+                        target: 1.6
 
-    dependencies:
-        dependency:
-            groupId: com.bar
-            artifactId: foo
-            version: 1.0-SNAPSHOT
+        dependencies:
+            dependency:
+                groupId: com.bar
+                artifactId: foo
+                version: 1.0-SNAPSHOT
 
 This will be transformed to a normal pom.xml file.
 
@@ -55,13 +57,16 @@ Although not very common in POMs, sometimes attributes are necessary. Since YAML
 
 See for instance the following example to configure the port with the Jetty plugin:
 
-    plugin:
-        groupId: org.mortbay.jetty
-        artifactId: maven-jetty-plugin
-        version: 6.1.10
-        configuration:
-            connectors:
-                connector:
-                    _implementation: org.mortbay.jetty.nio.SelectChannelConnector
-                    port: 8080
+    project:
+        build:
+            plugins:
+                plugin:
+                    groupId: org.mortbay.jetty
+                    artifactId: maven-jetty-plugin
+                    version: 6.1.10
+                    configuration:
+                        connectors:
+                            connector:
+                                _implementation: org.mortbay.jetty.nio.SelectChannelConnector
+                                port: 8080
 
