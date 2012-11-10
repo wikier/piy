@@ -27,7 +27,7 @@ As a geneal rule, I strongly recomment that generated files must not be managed 
 
 ## How does it work
 
-The tools preprocess th file pom.yaml of the current directory, and generates a proper pom.xml. Then you can use Maven as usual.
+The tools pre-processes the pom.yaml file at the current directory, and generates a proper pom.xml. Then you can use Maven as usual.
 
 Althougt with the same goal, the approach is completelly different to [Maven3 polyglot](http://polyglot.sonatype.org/), which adds to Maven3 the ability to work with pom files written in non-XML notations. 
 
@@ -69,9 +69,7 @@ Basically it's a translation of the current XML tree to YAML.
 
 This will be transformed to a normal pom.xml file.
 
-Although not very common in POMs, sometimes attributes are necessary. Since YAML doesn't support attributes, attributes start with underline.
-
-See for instance the following example to configure the port with the Jetty plugin:
+Although not very common in POMs, sometimes attributes are necessary. Since YAML doesn't support attributes, attributes need to start with underline. See for instance the following example to configure the port with the Jetty plugin:
 
     project:
         build:
