@@ -8,8 +8,8 @@ from huTools.structured import dict2et
 from xml.etree import ElementTree
 from xml.dom import minidom
 
-def transform_pom_yaml_to_xml(yaml="pom.yaml", modelVersion="4.0.0", indent="    ", encoding="utf-8"):
-    path =  os.getcwd() + os.sep + yaml 
+def transform_pom_yaml_to_xml(fileName="pom.yaml", modelVersion="4.0.0", indent="    ", encoding="utf-8"):
+    path =  os.getcwd() + os.sep + fileName 
     try:
         with open(path, "r") as f:
             content = f.read()
