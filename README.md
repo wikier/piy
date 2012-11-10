@@ -19,11 +19,11 @@ Once you have written your POM pom.yaml file, just execute:
 
     piy
 
-This will show the generated pom.xml in the standard output. When you'd be happy with the result, you can save it:
+This will show the generated pom.xml in the standard output. When you'd be happy with the result, you can save it by running:
 
     piy > pom.xml
 
-As a geneal rule, I strongly recomment not to add generated file to the source control systems (git, hg, svn or whatever). And this case is not an exception; so, please, don't commit the pom.xml file if you want to avoid synchronization issues.
+As a geneal rule, I strongly recomment that generated files must not be managed by the source control systems (git, hg, svn or whatever). And this case is not an exception; so, please, don't commit the pom.xml file to your project if you want to avoid synchronization issues with other users/developers.
 
 ## How does it work
 
