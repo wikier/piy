@@ -1,0 +1,24 @@
+project:
+
+    modelVersion: 4.0.0
+    groupId: com.foo
+    artifactId: bar
+    version: 1.0-SNAPSHOT
+    packaging: jar
+
+    build:
+        plugins:
+            plugin:
+                groupId: org.apache.maven.plugins
+                artifactId: maven-compiler-plugin
+                version: 2.5.1                
+                configuration:
+                    source: 1.6
+                    target: 1.6
+
+    dependencies:
+        dependency:
+            groupId: com.bar
+            artifactId: foo
+            version: 1.0-SNAPSHOT           
+
