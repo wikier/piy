@@ -1,7 +1,7 @@
 # piy
 
 
-"POM in YAML" is a simple tool to write [Maven](http://maven.apache.org) POM files using [YAML](http://www.yaml.org/).
+"POM in YAML" is a simple tool to write [Maven](http://maven.apache.org) POM files using [YAML](http://www.yaml.org/). Because many times XML can be too verbose...
 
 ## Installation
 
