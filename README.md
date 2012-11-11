@@ -33,11 +33,17 @@ Althougt with the same goal, the approach is completelly different to [Maven3 po
 
 ## Status
 
-**The tools is still in alpha!**
+**The tools is still in alpha!** All feedback and bug reports are welcome.
 
-Currently it has a strong issue for its usage:
+Unfortunatelly the tool currently has a strong issue for its usage:
 
  * It is not completelly functionall without applying [this patch](http://github.com/hudora/huTools/issues/9#issuecomment-10223194) to one of its dependencies
+
+Therefore you would need to get a version of huTools with that issue solved, for instance from this fork:
+
+    git clone https://github.com/wikier/huTools.git
+    cd huTools
+    python setup.py install
 
 ## Syntax
 
