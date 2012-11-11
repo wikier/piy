@@ -8,6 +8,17 @@ from huTools.structured import dict2et
 from xml.etree import ElementTree
 from xml.dom import minidom
 
+def __preprocess_attributes(node):
+    if type(node) == dict:
+        node2 = {}
+        for k, v in node.items():
+            if str(k).startswith("_"):
+                k = "@" + str(k)[1:]
+            node2[k] = __preprocess_attributes(v) 
+        return node2
+    else:
+        return node
+
 def transform_pom_yaml_to_xml(fileName="pom.yaml", modelVersion="4.0.0", indent="    ", encoding="utf-8"):
     path =  os.getcwd() + os.sep + fileName 
     try:
@@ -19,6 +30,7 @@ def transform_pom_yaml_to_xml(fileName="pom.yaml", modelVersion="4.0.0", indent=
     if not "project" in pom:
         sys.exit("'project' root node not found")
     else:
+        pom = __preprocess_attributes(pom)
         if not "modelVersion" in pom["project"]:
             pom["project"]["modelVersion"] = modelVersion
         elif not pom["project"]["modelVersion"] == modelVersion:
@@ -28,7 +40,7 @@ def transform_pom_yaml_to_xml(fileName="pom.yaml", modelVersion="4.0.0", indent=
         pom["project"]["@xsi:schemaLocation"] = "http://maven.apache.org/POM/%s http://maven.apache.org/maven-v%s.xsd" % (modelVersion, modelVersion.replace(".", "_"))
         xml = dict2et(pom)
         dom = minidom.parseString(ElementTree.tostring(xml[0], encoding))
-        print dom.toprettyxml(indent) #TODO
+        print dom.toprettyxml(indent)
 
 if __name__ == "__main__":
     transform_pom_yaml_to_xml()

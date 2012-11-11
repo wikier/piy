@@ -8,5 +8,5 @@ __authors__ = "Sergio Fernández"
 __license__ = "GNU General Public License v3 or later (GPLv3+)"
 __url__     = "http://github.com/wikier/piy"
 __contact__ = "sergio@wikier.org"
-__date__    = "2012-11-10"
+__date__    = "2012-11-11"
 
