@@ -15,7 +15,7 @@ From PyPI:
 
 ## Usage
 
-Once you have written your POM pom.yaml file, just execute:
+Once you have written your pom.yaml file, just execute:
 
     piy
 
@@ -37,7 +37,7 @@ Althougt with the same goal, the approach is completelly different to [Maven3 po
 
 Currently it has a strong issue for its usage:
 
- * It is not completelly functionall without applying [this patch](http://www.yaml.org/) to one of its dependencies
+ * It is not completelly functionall without applying [this patch](http://github.com/hudora/huTools/issues/9#issuecomment-10223194) to one of its dependencies
 
 ## Syntax
 
