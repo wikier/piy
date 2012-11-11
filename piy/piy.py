@@ -19,8 +19,10 @@ def __preprocess_attributes(node):
     else:
         return node
 
-def transform_pom_yaml_to_xml(fileName="pom.yaml", modelVersion="4.0.0", indent="    ", encoding="utf-8"):
-    path =  os.getcwd() + os.sep + fileName 
+def transform_pom_yaml_to_xml(path=None, fileName="pom.yaml", modelVersion="4.0.0", indent="    ", encoding="utf-8"):
+    if path == None:
+        path = os.getcwd()
+    path = path + os.sep + fileName 
     try:
         with open(path, "r") as f:
             content = f.read()
