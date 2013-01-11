@@ -17,11 +17,11 @@ setup(
     ],
     requires = [
         "pyyaml",
-        "hutools"
+        "hutools >= 0.64"
     ],
     install_requires = [
         "pyyaml",
-        "hutools"
+        "hutools >= 0.64"
     ],
     package_data = {
         "rubber": []
