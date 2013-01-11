@@ -3,6 +3,10 @@
 
 "POM in YAML" is a simple tool to write [Maven](http://maven.apache.org) POM files using [YAML](http://www.yaml.org/). Because many times XML can be too verbose...
 
+## Status
+
+**The tools is still in alpha!** All feedback and bug reports are welcome.
+
 ## Installation
 
 From the code:
@@ -30,20 +34,6 @@ As a geneal rule, I strongly recomment that generated files must not be managed 
 The tools pre-processes the pom.yaml file at the current directory, and generates a proper pom.xml. Then you can use Maven as usual.
 
 Althougt with the same goal, the approach is completelly different to [Maven3 polyglot](http://polyglot.sonatype.org/), which adds to Maven3 the ability to work with pom files written in non-XML notations. 
-
-## Status
-
-**The tools is still in alpha!** All feedback and bug reports are welcome.
-
-Unfortunatelly the tool currently has a strong issue for its usage:
-
- * It is not completelly functionall without applying [this patch](http://github.com/hudora/huTools/issues/9#issuecomment-10223194) to one of its dependencies
-
-Therefore you would need to get a version of huTools with that issue solved, for instance from this fork:
-
-    git clone https://github.com/wikier/huTools.git
-    cd huTools
-    python setup.py install
 
 ## Syntax
 
@@ -75,7 +65,7 @@ Basically it's a translation of the current XML tree to YAML.
 
 This will be transformed to a normal pom.xml file.
 
-Although not very common in POMs, sometimes attributes are necessary. Since YAML doesn't support attributes, attributes need to start with underline. See for instance the following example to configure the port with the Jetty plugin:
+Although not very common in POMs, sometimes attributes are necessary in POM files. Since YAML doesn't support attributes, for adding attributes you'd need to start the name of the node with the underline symbol. See for instance the following example to configure the port with the Jetty plugin using such way:
 
     project:
         build:
