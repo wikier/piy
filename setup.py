@@ -17,7 +17,7 @@ setup(
     ],
     requires = [
         "pyyaml",
-        "hutools >= 0.64"
+        "hutools"
     ],
     install_requires = [
         "pyyaml",
