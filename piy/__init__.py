@@ -3,7 +3,7 @@
 
 from piy import transform_pom_yaml_to_xml
 
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 __authors__ = "Sergio Fernández"
 __license__ = "GNU General Public License v3 or later (GPLv3+)"
 __url__     = "http://github.com/wikier/piy"
