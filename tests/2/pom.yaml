@@ -8,6 +8,6 @@ project:
                 configuration:
                     connectors:
                         connector:
-                            @implementation: org.mortbay.jetty.nio.SelectChannelConnector
+                            _implementation: org.mortbay.jetty.nio.SelectChannelConnector
                             port: 8080
 
